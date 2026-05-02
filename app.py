@@ -58,6 +58,14 @@ datos = pd.read_csv('geih_limpio.csv')
 
 # Título
 st.title('Factores que determinan el ingreso laboral en Colombia')
+st.markdown("""
+    <p style="color: #243e36; font-size: 13px; text-align: center; margin: 10px 40px;">
+        Este dashboard analiza los datos de 169,472 trabajadores colombianos de la Gran Encuesta Integrada de Hogares (GEIH) 
+        del primer semestre de 2025, con el objetivo de identificar qué factores influyen en el ingreso laboral: 
+        nivel educativo, tipo de contrato, posición ocupacional, sector económico, sexo, zona geográfica, 
+        horas trabajadas y antigüedad.
+    </p>
+""", unsafe_allow_html=True)
 st.caption('Fuente: GEIH 2025 — DANE | Primer semestre (Enero - Junio)')
 
 # Filtro de mes con botones
