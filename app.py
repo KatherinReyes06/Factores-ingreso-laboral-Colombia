@@ -289,7 +289,7 @@ with col4:
     
     if variable_tiempo == 'Horas por semana':
         bins_t = [0, 10, 20, 30, 40, 46, 60, 200]
-        labels_t = ['1-10', '11-20', '21-30', '31-40', '41-46', '47-60', '> 60']
+        labels_t = ['1-10h', '11-20h', '21-30h', '31-40h', '41-46h', '47-60h', '> 60h']
         datos_filtrados['RANGO_T'] = pd.cut(datos_filtrados['HORAS_SEMANA'], bins=bins_t, labels=labels_t)
     else:
         bins_t = [0, 6, 12, 24, 60, 120, 240, 1000]
