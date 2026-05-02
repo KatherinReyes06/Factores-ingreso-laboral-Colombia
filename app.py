@@ -111,7 +111,7 @@ st.markdown(f"""
             <p style="color: white; margin: 0; font-size: 28px; font-weight: bold;">{encuestados}</p>
         </div>
         <div style="background-color: #243e36; padding: 20px 40px; border-radius: 10px; text-align: center; min-width: 200px;">
-            <p style="color: #7ca982; margin: 0; font-size: 14px;">Departamentos</p>
+            <p style="color: #7ca982; margin: 0; font-size: 14px;">Departamentos + Distrito Capital </p>
             <p style="color: white; margin: 0; font-size: 28px; font-weight: bold;">{departamentos}</p>
         </div>
     </div>
