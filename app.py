@@ -63,6 +63,8 @@ st.caption('Fuente: GEIH 2025 — DANE | Primer semestre (Enero - Junio)')
 # Filtro de mes con botones
 if 'mes_seleccionado' not in st.session_state:
     st.session_state.mes_seleccionado = 'Global'
+if 'filter_version' not in st.session_state:
+    st.session_state.filter_version = 0
 
 meses_opciones = ['Global', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']
 cols_mes = st.columns(len(meses_opciones))
@@ -74,6 +76,7 @@ for i, mes in enumerate(meses_opciones):
         else:
             if st.button(mes, key=f'btn_{mes}', use_container_width=True):
                 st.session_state.mes_seleccionado = mes
+                st.session_state.filter_version += 1
                 try:
                     st.rerun()
                 except AttributeError:
@@ -175,7 +178,7 @@ with col2:
     factor = st.selectbox('Factor', [
         'NIVEL_EDUCATIVO', 'POSICION',
         'TIENE_CONTRATO', 'CLASE', 'TAMAÑO_EMPRESA'
-    ], label_visibility='collapsed')
+    ], label_visibility='collapsed', key=f'select_factor_{st.session_state.filter_version}')
     
     resumen_factor = datos_filtrados.groupby(factor).agg(
         Mediana=('INGLABO', 'median'),
@@ -282,7 +285,7 @@ with col4:
     """, unsafe_allow_html=True)
     
     variable_tiempo = st.selectbox('Variable', ['Horas por semana', 'Antigüedad en la empresa'], 
-                                    label_visibility='collapsed', key='select_tiempo')
+                                    label_visibility='collapsed', key=f'select_tiempo_{st.session_state.filter_version}')
     
     if variable_tiempo == 'Horas por semana':
         bins_t = [0, 10, 20, 30, 40, 46, 60, 200]
