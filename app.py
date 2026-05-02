@@ -74,7 +74,10 @@ for i, mes in enumerate(meses_opciones):
         else:
             if st.button(mes, key=f'btn_{mes}', use_container_width=True):
                 st.session_state.mes_seleccionado = mes
-                st.experimental_rerun()
+                try:
+                    st.rerun()
+                except AttributeError:
+                    st.experimental_rerun()
 
 if st.session_state.mes_seleccionado == 'Global':
     datos_filtrados = datos.copy()
