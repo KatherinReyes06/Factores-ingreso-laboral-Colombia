@@ -40,3 +40,4 @@ Fuente: [GEIH 2025 — DANE](https://microdatos.dane.gov.co/index.php/catalog/85
 Katherin Liceth Reyes Enciso
 - [LinkedIn](https://www.linkedin.com/in/katherin-liceth-reyes-enciso-911b62186/)
 - [GitHub](https://github.com/KatherinReyes06)
+- [App streamlit](https://factores-ingreso-laboral-colombia.streamlit.app/)
